@@ -42,6 +42,14 @@ public function exportPdf()
             'keterangan' => 'nullable|string',
         ]);
 
+        // =====
+
+        // 'keterangan' => 'nullable|string|max:500',
+
+        // Tanpa batasan, user bisa memasukkan teks sangat panjang.
+
+        // =====
+
         // Membuat entri musik baru
         Music::create($request->all());
         return redirect()->route('music.index')->with('success', 'Music created successfully.'); // Redirect ke daftar musik dengan pesan sukses
