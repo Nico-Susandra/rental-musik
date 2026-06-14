@@ -88,6 +88,14 @@ public function exportPdf()
             'keterangan' => 'nullable|string',
         ]);
 
+    // =====
+
+    // 'harga_sewa' => 'required|numeric|min:0',
+
+    // Mencegah Harga Negatif
+
+    // =====
+    
         // Memperbarui entri musik
         $music->update($request->all());
         return redirect()->route('music.index')->with('success', 'Music updated successfully.'); // Redirect ke daftar musik dengan pesan sukses
